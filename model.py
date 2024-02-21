@@ -56,6 +56,6 @@ class PhysicalLSTM2(nn.Module):
 
         x = self.dropout(self.relu(self.bn4(self.fc1(lstm_out))))
         x = self.dropout(self.relu(self.bn5(self.fc2(x))))
-        x = self.sigmoid(self.fc3(x)) * 0.15 + 1.0
+        x = self.sigmoid(self.fc3(x)) * factor
 
         return x, yd, time
